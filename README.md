@@ -1,4 +1,4 @@
-# MedGuardian
+# MediTrack AI
 
 **Intelligent Personal Medication and Medical Record Management Platform**
 
