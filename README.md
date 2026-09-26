@@ -2,14 +2,14 @@
 
 **Intelligent Personal Medication and Medical Record Management Platform**
 
-MedGuardian is a patient-centred web application for managing medicines, doses,
+MediTrack Ai is a patient-centred web application for managing medicines, doses,
 refills and medical documents. It gives a patient visual (never spoken)
 reminders showing a photograph of the actual medicine, an honest adherence
 score, a refill forecast built from what they really take, deterministic drug
 interaction checking, secure document storage with OCR, and optional
 finely-scoped caregiver access.
 
-> **Scope.** MedGuardian is patient-centric by design. There is **no doctor
+> **Scope.** MediTrack Ai is patient-centric by design. There is **no doctor
 > portal**, **no pharmacy integration**, **no hospital-management dependency**
 > and **no voice reminders**. It is a final-year academic project — not a
 > medical device, and not a substitute for advice from a doctor or pharmacist.
@@ -76,7 +76,7 @@ runs.
 ## Project structure
 
 ```
-MedGuardian/
+MediTrack Ai/
 ├── backend/
 │   ├── src/
 │   │   ├── config/       env loader, logger, database connection
@@ -179,10 +179,10 @@ mongosh
 Your connection string is then:
 
 ```
-MONGO_URI=mongodb://127.0.0.1:27017/medguardian
+MONGO_URI=mongodb://127.0.0.1:27017/MediTrack Ai
 ```
 
-MedGuardian creates the `medguardian` database and all its collections and
+MediTrack Ai creates the `MediTrack Ai` database and all its collections and
 indexes automatically on first run — there is no migration step.
 
 ### Option B — MongoDB Atlas (free tier, no local install)
@@ -194,13 +194,13 @@ indexes automatically on first run — there is no migration step.
 5. **Connect** → *Connect your application* → copy the connection string.
 
 ```
-MONGO_URI=mongodb+srv://<user>:<password>@<cluster>.mongodb.net/medguardian?retryWrites=true&w=majority
+MONGO_URI=mongodb+srv://<user>:<password>@<cluster>.mongodb.net/MediTrack Ai?retryWrites=true&w=majority
 ```
 
 ### Option C — Docker
 
 ```bash
-docker run -d --name medguardian-mongo -p 27017:27017 -v medguardian-data:/data/db mongo:7
+docker run -d --name MediTrack Ai-mongo -p 27017:27017 -v MediTrack Ai-data:/data/db mongo:7
 ```
 
 ---
@@ -226,7 +226,7 @@ Minimum working configuration:
 NODE_ENV=development
 PORT=5000
 CLIENT_ORIGIN=http://localhost:5173
-MONGO_URI=mongodb://127.0.0.1:27017/medguardian
+MONGO_URI=mongodb://127.0.0.1:27017/MediTrack Ai
 JWT_SECRET=<first generated secret>
 JWT_REFRESH_SECRET=<second generated secret>
 ```
@@ -298,7 +298,7 @@ npm run seed
 
 This creates a patient with a month of realistic history:
 
-- **Email:** `demo.patient@medguardian.local`
+- **Email:** `demo.patient@MediTrack Ai.local`
 - **Password:** `Demo1234`
 
 It is arranged so every feature has something to show:
@@ -337,7 +337,7 @@ when a database is reachable** and are skipped (rather than failing) when one
 is not. To be explicit about which database is used:
 
 ```bash
-MONGO_TEST_URI=mongodb://127.0.0.1:27017/medguardian_test npm test
+MONGO_TEST_URI=mongodb://127.0.0.1:27017/MediTrack Ai_test npm test
 ```
 
 Run one area:
@@ -505,7 +505,7 @@ for several) and restart the API.
 
 **Database-backed tests are skipped**
 No MongoDB was reachable. Start one and re-run with
-`MONGO_TEST_URI=mongodb://127.0.0.1:27017/medguardian_test npm test`. The unit
+`MONGO_TEST_URI=mongodb://127.0.0.1:27017/MediTrack Ai_test npm test`. The unit
 and contract layers run regardless.
 
 **OCR is slow on the first run**
@@ -532,5 +532,5 @@ marked demonstration content**, compiled for teaching purposes. They are not
 complete or clinically validated and must not be used to make treatment
 decisions. Replace them with a licensed source before any real-world use.
 
-MedGuardian does not diagnose, prescribe, or replace professional medical
+MediTrack Ai does not diagnose, prescribe, or replace professional medical
 advice. Always consult a qualified doctor or pharmacist.
